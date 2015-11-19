@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 拦截.action模式的请求 -->
+	<constant name="struts.action.extension" value="action" />
+	<constant name="struts.i18n.encoding" value="UTF-8"/>
+	<!-- 指定默认编码集 ，作用于HttpServletRequest的setCharacterEncoding（）和freemarker，vilocity的输出 -->
+	<constant name="struts.configuration.xmlreload" value="true"/>
+	<!-- 当struts配置文件修改时是否自动加载 -->
+	<constant name="struts.devMode" value="true"/>
+	<!-- 开发模式下打印详细的错误信息 -->
+	<constant name="struts.ui.theme" value="xhtml"/>
+    <package name="dsw" namespace="/" extends="struts-default">
+       <!--注册拦截器-->
+       <interceptors>
+           <interceptor name="serviceInterceptor" class="com.dsw.interceptor.ServiceInterceptor"/>
+           <interceptor-stack name="mystack">
+              <interceptor-ref name="defaultStack"/>       
+              <interceptor-ref name="serviceInterceptor"/>
+           </interceptor-stack>
+       </interceptors>
+       <!-- 设置默认拦截器栈 -->
+       <default-interceptor-ref name="mystack"/>
+       <!-- 全局跳转页-->
+       <global-results>
+       	   <result name="login">vc</result>
+           <result name="error">vc</result>
+       </global-results>
+       <!-- 全局异常 -->
+       <global-exception-mappings>
+           <exception-mapping result="error" exception="java.lang.Exception"/>
+       </global-exception-mappings>
+    
+       <action name="register" class="registerAction">
+            <result name = "success">hello</result>
+            <result name = "error">vc</result>
+       </action>
+        
+    </package>
+    <!-- Add new packages here -->
+
+</struts>

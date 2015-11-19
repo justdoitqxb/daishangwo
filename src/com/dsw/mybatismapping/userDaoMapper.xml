@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <!--命名空间用于查找 -->
+ <mapper namespace="com.dsw.dao.UserDao">
+ <!-- 替代，语句中的内容,简写 -->
+ 	<resultMap type="com.dsw.bean.User" id="userResult">
+		<!-- result property="id" column="id" jdbcType="INTEGER" javaType="java.lang.Integer" /-->
+		<result property="userName" column="username" />
+		<result property="password" column="password" />
+	</resultMap>
+     <sql id="cols">
+          username,password      
+     </sql>
+<!-- 查询所有记录 -->
+     <select id="selectAll" resultType="com.dsw.bean.User">
+         select <include refid="cols"/> from  dsw_user      
+     </select>
+ 
+<!-- 查询一个用户 --> <!--  别名替代，简写-->
+     <select id="findbyUserName" parameterType="string" resultType="com.dsw.bean.User">
+         select <include refid="cols"/> from dsw_user where username= #{userName}    
+     </select>
+     
+<!-- 插入一个用户 -->
+     <insert id="insert" parameterType="com.dsw.bean.User" >
+         insert into dsw_user( <include refid="cols"/> ) values (#{userName},#{password})    
+     </insert>
+     
+<!-- 更新一个用户 -->
+     <insert id="update" parameterType="com.dsw.bean.User" >
+         update dsw_user set username=#{userName},password=#{password} where username=#{userName}   
+     </insert>
+     
+<!-- 删除一个用户 -->
+     <update id="delete" parameterType="com.dsw.bean.User" >
+         delete from dsw_user where username= #{userName}   
+     </update>
+     
+<!-- 统计用户数 -->
+     <select id="countAll" resultType="int" >
+         select count(*) from dsw_user   
+     </select>
+ </mapper>
