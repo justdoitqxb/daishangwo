@@ -24,10 +24,13 @@ public class UserServiceImpl implements UserService {
 	}
 	@Override
     public void addUser(User user) {
+		if(userDao.findbyUserName(user.getEmail()) != null){
+			throw new RuntimeException("The count already exists!");
+		}		
         userDao.insert(user);
     }
     @Override
-    public User getUserById(String userName) {
+    public User getUserByUserName(String userName) {
         return userDao.findbyUserName(userName);
     }
 }

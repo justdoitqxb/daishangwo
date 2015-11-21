@@ -14,4 +14,13 @@ public class Encryption {
 		sun.misc.BASE64Encoder base64Encoder = new sun.misc.BASE64Encoder();
 		return base64Encoder.encode(md5.digest(str.getBytes("utf-8")));
 	}
+	
+	//√‹¬Î—È÷§
+	public static  boolean checkPassword(String inputPassword, String validatePassword) throws Exception{
+		if(md5Encrypt(inputPassword).equals(md5Encrypt(validatePassword))){
+			return true;
+		}else{
+			return false;
+		}
+	}
 }

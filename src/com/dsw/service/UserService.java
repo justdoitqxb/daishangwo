@@ -12,5 +12,5 @@ public interface UserService {
      * 根据用户名获取用户
      * @param userName
      */
-	public User getUserById(String userName);
+	public User getUserByUserName(String userName);
 }

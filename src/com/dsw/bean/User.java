@@ -1,14 +1,33 @@
 package com.dsw.bean;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 
 public class User implements Serializable{
 	private static final long serialVersionUID = -4415990281535582810L;
-    private String email;
+	private int id;
+	private String email;
     private String password;
-    private String telephoneNumber;
+    private String telephone;
     private String address;
+    private Timestamp dateCreated;
     
+	public Timestamp getDateCreated() {
+		return dateCreated;
+	}
+
+	public void setDateCreated(Timestamp dateCreated) {
+		this.dateCreated = dateCreated;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public String getEmail() {
 		return email;
 	}
@@ -25,12 +44,12 @@ public class User implements Serializable{
 		this.password = password;
 	}
 
-	public String getTelephoneNumber() {
-		return telephoneNumber;
+	public String getTelephone() {
+		return telephone;
 	}
 
-	public void setTelephoneNumber(String telephoneNumber) {
-		this.telephoneNumber = telephoneNumber;
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
 	}
 
 	public String getAddress() {
@@ -39,11 +58,11 @@ public class User implements Serializable{
 
 	public void setAddress(String address) {
 		this.address = address;
-	}
+	}    
     
 	@Override
 	public String toString(){
-		return "User [userName=" + email +", password=" + password + "]";
+		return "User [userName=" + email +", password=]";
 	}
 	
 	@Override

@@ -16,7 +16,7 @@ public class RegisterAction extends ActionSupport{
 
 	@Override
 	public String execute(){
-		System.out.println(userDao.findbyUserName("qxb").getPassword());
+		System.out.println(userDao.findbyUserName("qxb").getDateCreated());
 		return SUCCESS;
 	}
 }

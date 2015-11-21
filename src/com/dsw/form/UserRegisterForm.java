@@ -4,7 +4,7 @@ public class UserRegisterForm {
     private String email;
 	private String password;
 	private String conformPassword;
-    private String telephoneNumber;
+    private String telephone;
     private String address;
     
 	public String getEmail() {
@@ -25,11 +25,11 @@ public class UserRegisterForm {
 	public void setConformPassword(String conformPassword) {
 		this.conformPassword = conformPassword;
 	}
-	public String getTelephoneNumber() {
-		return telephoneNumber;
+	public String getTelephone() {
+		return telephone;
 	}
-	public void setTelephoneNumber(String telephoneNumber) {
-		this.telephoneNumber = telephoneNumber;
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
 	}
 	public String getAddress() {
 		return address;
