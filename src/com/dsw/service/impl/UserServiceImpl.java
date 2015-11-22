@@ -7,7 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.dsw.bean.User;
 import com.dsw.dao.UserDao;
 import com.dsw.service.UserService;
-@Service
+@Service("userServiceImpl")
 @Transactional
 public class UserServiceImpl implements UserService {
 	/**
@@ -16,7 +16,7 @@ public class UserServiceImpl implements UserService {
     */
     @Autowired
     private UserDao userDao;	//×¢Èëdao
-    public UserDao getUserDao() {
+    public UserDao getUserDao(){
 		return userDao;
 	}
 	public void setUserDao(UserDao userDao) {

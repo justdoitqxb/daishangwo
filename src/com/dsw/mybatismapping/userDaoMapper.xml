@@ -9,10 +9,10 @@
 		<result property="password" column="password" />
 		<result property="telephone" column="telephone" />
 		<result property="adress" column="adress"/>
-		<result property="dataCreated" column="date_created" />
+		<result property="date_created" column="date_created" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp" />
 	</resultMap>
      <sql id="cols">
-          email,password      
+          id,email,password,telephone,address,date_created     
      </sql>
 <!-- 查询所有记录 -->
      <select id="selectAll" resultType="com.dsw.bean.User">
@@ -21,7 +21,7 @@
  
 <!-- 查询一个用户 --> <!--  别名替代，简写-->
      <select id="findbyUserName" parameterType="string" resultType="com.dsw.bean.User">
-         select <include refid="cols"/> from dsw_user where email= #{email}    
+         select id,email,password,telephone,address,date_created from dsw_user where email= #{email}    
      </select>
      
 <!-- 插入一个用户 -->

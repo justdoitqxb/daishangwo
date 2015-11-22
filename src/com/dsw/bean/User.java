@@ -1,7 +1,6 @@
 package com.dsw.bean;
-
-import java.io.Serializable;
 import java.sql.Timestamp;
+import java.io.Serializable;
 
 public class User implements Serializable{
 	private static final long serialVersionUID = -4415990281535582810L;
@@ -10,15 +9,7 @@ public class User implements Serializable{
     private String password;
     private String telephone;
     private String address;
-    private Timestamp dateCreated;
-    
-	public Timestamp getDateCreated() {
-		return dateCreated;
-	}
-
-	public void setDateCreated(Timestamp dateCreated) {
-		this.dateCreated = dateCreated;
-	}
+	private Timestamp date_created;
 
 	public int getId() {
 		return id;
@@ -58,7 +49,15 @@ public class User implements Serializable{
 
 	public void setAddress(String address) {
 		this.address = address;
-	}    
+	} 
+	
+	public Timestamp getDate_created() {
+		return date_created;
+	}
+
+	public void setDateCreated(Timestamp dateCreated) {
+		this.date_created = dateCreated;
+	}
     
 	@Override
 	public String toString(){
