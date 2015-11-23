@@ -10,7 +10,12 @@ public interface UserService {
 	public void addUser(User user);
 	/**
      * 根据用户名获取用户
-     * @param userName
+     * @param email
      */
-	public User getUserByUserName(String userName);
+	public User getUserByEmail(String email);
+	/**
+     * 根据邮箱密码-登陆
+     * @param email
+     */
+	public User loginVerify(String email, String password);	
 }

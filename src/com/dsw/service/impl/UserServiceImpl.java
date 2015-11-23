@@ -30,7 +30,11 @@ public class UserServiceImpl implements UserService {
         userDao.insert(user);
     }
     @Override
-    public User getUserByUserName(String userName) {
-        return userDao.findbyUserName(userName);
+    public User getUserByEmail(String email) {
+        return userDao.findbyUserName(email);
+    }
+    @Override
+    public User loginVerify(String email, String password){
+    	return null;
     }
 }
