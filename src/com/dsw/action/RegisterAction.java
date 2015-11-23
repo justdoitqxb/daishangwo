@@ -5,9 +5,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
-import com.dsw.bean.User;
 import com.dsw.form.UserRegisterForm;
 import com.dsw.service.UserService;
+import com.dsw.util.RegexValidation;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -27,15 +27,13 @@ public class RegisterAction extends ActionSupport{
 	}
 	@Override
 	public String execute(){
-		ActionContext.getContext().getSession().put("username",userRegisterForm.getEmail());
-		System.out.println(userRegisterForm.getEmail());
-		User u = userService.getUserByEmail("qxb@qq.com");
-		System.out.println(u.getId());
-		System.out.println(u.getEmail());
-		System.out.println(u.getPassword());
-		System.out.println(u.getTelephone());
-		System.out.println(u.getAddress());
-		System.out.println(u.getDate_created());
+		if(RegexValidation.checkEmail(userRegisterForm.getEmail()) && RegexValidation.checkPassword(userRegisterForm.getPassword(), userRegisterForm.getConformPassword())){
+			userService.addUser(userRegisterForm.mappeToUser());
+			ActionContext.getContext().getSession().put("username",userRegisterForm.getEmail());
+		}else{
+			ActionContext.getContext().getSession().put("errorMessage","邮箱格式错误或密码不一致！");
+			return ERROR;
+		}
 		return SUCCESS;
 	}
 }

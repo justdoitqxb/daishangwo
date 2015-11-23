@@ -1,5 +1,7 @@
 package com.dsw.form;
 
+import com.dsw.bean.User;
+
 public class UserRegisterForm {
     private String email;
 	private String password;
@@ -36,5 +38,13 @@ public class UserRegisterForm {
 	}
 	public void setAddress(String address) {
 		this.address = address;
+	}
+	public User mappeToUser(){
+		User user = new User();
+		user.setEmail(email);
+		user.setPassword(password);
+		user.setTelephone(telephone);
+		user.setAddress(address);
+		return user;
 	}
 }
