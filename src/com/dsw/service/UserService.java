@@ -5,7 +5,7 @@ import com.dsw.bean.User;
 public interface UserService {
     /**
      * 添加用户
-     * @param user
+     * @param User
      */
 	public void addUser(User user);
 	/**
@@ -17,5 +17,10 @@ public interface UserService {
      * 根据邮箱密码-登陆
      * @param email
      */
-	public User loginVerify(String email, String password);		
+	public User loginVerify(String email, String password);	
+	/**
+     * 修改密码
+     * @param User
+     */
+	public boolean modifyPassword(String email,String oldPassword, String newPassword);
 }

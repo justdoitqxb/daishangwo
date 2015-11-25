@@ -31,11 +31,15 @@ public class Hello extends HttpServlet {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		HttpSession session = request.getSession();
-		String userName = (String) session.getAttribute("username");
+		String userName = (String)session.getAttribute("username");
+		String errorMessage = (String)session.getAttribute("errorMessage");
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter out = response.getWriter();
-		out.println("Welcom : " + userName);
-		out.println("<a href=\"logout.action\">logout</a>");
+		out.print("Welcom : " + userName);
+		out.print("</br>");
+		out.print("<a href=\"logout.action\">logout</a>");
+		out.print("</br>");
+		out.print("ErroMessage : " + errorMessage);
 		//out.print(usi.getUserById("qxb").getPassword());
 	}
 

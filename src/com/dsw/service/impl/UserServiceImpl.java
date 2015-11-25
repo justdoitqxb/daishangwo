@@ -43,4 +43,16 @@ public class UserServiceImpl implements UserService {
     	}
     	return null;
     }
+    @Override
+    public boolean modifyPassword(String email, String oldPassword, String newPassword){
+    	User user = getUserByEmail(email);
+    	if(user.getPassword().equals(oldPassword)){
+    		user.setPassword(newPassword);
+    		userDao.update(user);
+    	}else{
+    		//throw new RuntimeException("‘≠√‹¬Î¥ÌŒÛ");
+    		return false;
+    	}
+    	return true;
+    }
 }
