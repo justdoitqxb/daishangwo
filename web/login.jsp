@@ -7,37 +7,25 @@
 <title>User register page</title>
 </head>
 <body>
-<form  action="register.action" method="post" > 
+<form  action="login.action" method="post" > 
 	<fieldset > 
-		<legend>表单的注册</legend> 
+		<legend>用户登录</legend> 
 		<table width=100% > 
 		<tbody> 
 			<tr >
 				<td width=40% align="right"><label for="t1">Email:</label></td> 
-				<td><input type="text" name="registerForm.email"></td> 
+				<td><input type="text" name="loginForm.email"></td> 
 			</tr> 
 			<tr>
 				<td width=40% align="right"><label>password：</label></td> 
-				<td><input type="password" name="registerForm.password" /></td> 
-			</tr>
-			<tr>
-				<td width=40% align="right"><label>password：</label></td> 
-				<td><input type="password" name="registerForm.conformPassword" /></td> 
-			</tr> 
-			<tr>
-				<td width=40% align="right"><label>telephone：</label></td> 
-				<td><input type="text" name="registerForm.telephone" ></td> 
-			</tr> 
-			<tr>
-				<td width=40% align="right"><label>address：</label></td> 
-				<td><input type="text" name="registerForm.address" ></td> 
+				<td><input type="password" name="loginForm.password" /></td> 
 			</tr>
 			<tr>
 				<td width=40% align="right" rowspan=2><input type="submit" value="submit" /></td> 
 				<td><input id="Reset1" type="reset" value="reset" /></td> 
 			</tr> 
 		</tbody> 
-	</table> 
+		</table> 
 	</fieldset> 
 </form> 
 

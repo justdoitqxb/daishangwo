@@ -17,5 +17,5 @@ public interface UserService {
      * ¸ù¾İÓÊÏäÃÜÂë-µÇÂ½
      * @param email
      */
-	public User loginVerify(String email, String password);	
+	public User loginVerify(String email, String password);		
 }

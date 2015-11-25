@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
-import com.dsw.form.UserRegisterForm;
+import com.dsw.form.RegisterForm;
 import com.dsw.service.UserService;
 import com.dsw.util.RegexValidation;
 import com.opensymphony.xwork2.ActionContext;
@@ -18,18 +18,18 @@ public class RegisterAction extends ActionSupport{
 	@Autowired
 	@Qualifier("userServiceImpl")
 	private UserService userService;
-	private UserRegisterForm userRegisterForm;
-	public UserRegisterForm getUserRegisterForm() {
-		return userRegisterForm;
+	private RegisterForm registerForm;
+	public RegisterForm getUserRegisterForm() {
+		return registerForm;
 	}
-	public void setUserRegisterForm(UserRegisterForm userRegisterForm) {
-		this.userRegisterForm = userRegisterForm;
+	public void setRegisterForm(RegisterForm registerForm) {
+		this.registerForm = registerForm;
 	}
 	@Override
 	public String execute(){
-		if(RegexValidation.checkEmail(userRegisterForm.getEmail()) && RegexValidation.checkPassword(userRegisterForm.getPassword(), userRegisterForm.getConformPassword())){
-			userService.addUser(userRegisterForm.mappeToUser());
-			ActionContext.getContext().getSession().put("username",userRegisterForm.getEmail());
+		if(RegexValidation.checkEmail(registerForm.getEmail()) && RegexValidation.checkPassword(registerForm.getPassword(), registerForm.getConformPassword())){
+			userService.addUser(registerForm.mappeToUser());
+			ActionContext.getContext().getSession().put("username",registerForm.getEmail());
 		}else{
 			ActionContext.getContext().getSession().put("errorMessage","邮箱格式错误或密码不一致！");
 			return ERROR;

@@ -34,7 +34,8 @@ public class Hello extends HttpServlet {
 		String userName = (String) session.getAttribute("username");
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter out = response.getWriter();
-		out.print("Welcom : " + userName);
+		out.println("Welcom : " + userName);
+		out.println("<a href=\"logout.action\">logout</a>");
 		//out.print(usi.getUserById("qxb").getPassword());
 	}
 

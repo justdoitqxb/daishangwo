@@ -37,7 +37,17 @@
             <result name = "success">hello</result>
             <result name = "error">vc</result>
        </action>
-        
+       
+       <action name="login" class="loginAction">
+            <result name = "success">hello</result>
+            <result name = "error">vc</result>
+       </action>
+       
+       <action name="logout" class="logoutAction">
+            <result name = "success">hello</result>
+            <result name = "error">vc</result>
+       </action>
+       
     </package>
     <!-- Add new packages here -->
 

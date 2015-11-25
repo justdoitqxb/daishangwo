@@ -2,7 +2,7 @@ package com.dsw.form;
 
 import com.dsw.bean.User;
 
-public class UserRegisterForm {
+public class RegisterForm {
     private String email;
 	private String password;
 	private String conformPassword;
