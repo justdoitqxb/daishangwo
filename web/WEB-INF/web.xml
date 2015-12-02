@@ -2,6 +2,22 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
   <display-name>daishangwo</display-name>
   <servlet>
+    <servlet-name>success</servlet-name>
+    <servlet-class>com.dsw.servlet.Success</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>success</servlet-name>
+    <url-pattern>/success</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>error</servlet-name>
+    <servlet-class>com.dsw.servlet.Error</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>error</servlet-name>
+    <url-pattern>/error</url-pattern>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>hello</servlet-name>
     <servlet-class>com.dsw.servlet.Hello</servlet-class>
   </servlet>

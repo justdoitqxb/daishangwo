@@ -34,22 +34,22 @@
        </global-exception-mappings>
     
        <action name="register" class="registerAction">
-            <result name = "success">hello</result>
-            <result name = "error">vc</result>
+            <result name = "success">success</result>
+            <result name = "error">error</result>
        </action>
        
        <action name="login" class="loginAction">
-            <result name = "success">modifyPassword.jsp</result>
-            <result name = "error">vc</result>
+            <result name = "success">success</result>
+            <result name = "error">error</result>
        </action>
        
        <action name="logout" class="logoutAction">
-            <result name = "success">hello</result>
-            <result name = "error">vc</result>
+            <result name = "success">success</result>
+            <result name = "error">error</result>
        </action>
        <action name="modify" class="modifyPasswordAction">
-            <result name = "success">hello</result>
-            <result name = "error">vc</result>
+            <result name = "success">success</result>
+            <result name = "error">error</result>
        </action>
        
     </package>

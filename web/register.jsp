@@ -7,7 +7,7 @@
 <title>User register page</title>
 </head>
 <body>
-<form  action="register.action" method="post" > 
+<form  action="register.action" method="get" > 
 	<fieldset > 
 		<legend>表单的注册</legend> 
 		<table width=100% > 

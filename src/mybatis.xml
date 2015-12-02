@@ -13,6 +13,6 @@
          </environment>
      </environments>
      <mappers>
-         <mapper resource="com/dsw/mybatismapping/userDaoMapper.xml"/>
+         <mapper resource="com/dsw/mybatismapping/*.xml"/>
      </mappers-->
 </configuration>

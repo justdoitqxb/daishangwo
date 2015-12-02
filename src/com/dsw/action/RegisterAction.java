@@ -19,7 +19,7 @@ public class RegisterAction extends ActionSupport{
 	@Qualifier("userServiceImpl")
 	private UserService userService;
 	private RegisterForm registerForm;
-	public RegisterForm getUserRegisterForm() {
+	public RegisterForm getRegisterForm() {
 		return registerForm;
 	}
 	public void setRegisterForm(RegisterForm registerForm) {
