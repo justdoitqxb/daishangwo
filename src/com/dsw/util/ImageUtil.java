@@ -14,21 +14,20 @@ import org.apache.struts2.ServletActionContext;
 
 public class ImageUtil {
 	
-	public static boolean upload(File file, String fileName, String identification, String saveDir){
+	public static String upload(File file, String fileName, String identification, String saveDir){
 		if(file != null){
 			String realPath = ServletActionContext.getServletContext().getRealPath(saveDir);
 			String suffix = fileName.substring(fileName.lastIndexOf("."));
-			if (fileName.lastIndexOf(".") != -1 || !suffix.equals(".jpg")) {  
+			if (fileName.lastIndexOf(".") == -1 || !suffix.equals(".jpg")) {  
                 throw new SecurityException("Iamge format error!") ;
             }  
-            String newFileName = identification + System.currentTimeMillis() + "." + suffix;   
+            String newFileName = identification + System.currentTimeMillis() + suffix;   
             File savefile = new File(new File(realPath), newFileName);  
             if (!savefile.getParentFile().exists()){ 
                 savefile.getParentFile().mkdirs(); 
             }
             FileOutputStream fos=null;
             FileInputStream fis = null;
-            System.out.println(file);
             try {
             	byte[] buffer=new byte[1024];
                 fos=new FileOutputStream(savefile);
@@ -37,6 +36,7 @@ public class ImageUtil {
                     fos.write(buffer);
                     fos.flush();
                 }
+                return savefile.getAbsolutePath();
             } catch (Exception e) {
                 e.printStackTrace();
             } finally{
@@ -51,10 +51,8 @@ public class ImageUtil {
                     e.printStackTrace();
                 }
             }	
-		}else{
-			return false;
 		}
-		return true;
+		return null;
 	}
 	
 	public static void writeImage(String filePath, HttpServletResponse response){

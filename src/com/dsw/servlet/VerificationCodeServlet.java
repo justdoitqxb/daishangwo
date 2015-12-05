@@ -36,7 +36,7 @@ public class VerificationCodeServlet extends HttpServlet {
     	VerificationCode vc = new VerificationCode();
     	vc.generateImage();	//生成验证码
     	HttpSession session = request.getSession();
-    	session.setMaxInactiveInterval(300); //session有效时间
+    	//session.setMaxInactiveInterval(300); //session有效时间
     	session.setAttribute("verificationCode", vc.getSb().toString());
 		response.setContentType("text/html;charset=utf-8");
 		OutputStream os = response.getOutputStream();
