@@ -1,5 +1,7 @@
 package com.dsw.form;
 
+import java.io.File;
+
 import com.dsw.bean.User;
 
 public class RegisterForm {
@@ -8,7 +10,28 @@ public class RegisterForm {
 	private String conformPassword;
     private String telephone;
     private String address;
+    private File file;
+	private String fileFileName;  
+    private String fileContentType;
     
+    public File getFile() {
+		return file;
+	}
+	public void setFile(File file) {
+		this.file = file;
+	}
+	public String getFileFileName() {
+		return fileFileName;
+	}
+	public void setFileFileName(String fileFileName) {
+		this.fileFileName = fileFileName;
+	}
+	public String getFileContentType() {
+		return fileContentType;
+	}
+	public void setFileContentType(String fileContentType) {
+		this.fileContentType = fileContentType;
+	}
 	public String getEmail() {
 		return email;
 	}

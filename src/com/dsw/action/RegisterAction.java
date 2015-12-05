@@ -1,5 +1,6 @@
 package com.dsw.action;
 
+import java.io.Serializable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
@@ -13,12 +14,13 @@ import com.opensymphony.xwork2.ActionSupport;
 
 @Scope("request")
 @Controller("registerAction")
-public class RegisterAction extends ActionSupport{
-	private static final long serialVersionUID = 1L;
+public class RegisterAction extends ActionSupport implements Serializable{
+	private static final long serialVersionUID = 11111L;
 	@Autowired
 	@Qualifier("userServiceImpl")
 	private UserService userService;
 	private RegisterForm registerForm;
+	
 	public RegisterForm getRegisterForm() {
 		return registerForm;
 	}
@@ -27,6 +29,9 @@ public class RegisterAction extends ActionSupport{
 	}
 	@Override
 	public String execute(){
+		System.out.println(registerForm.getFile().getPath());
+		System.out.println(registerForm.getFileFileName());
+		System.out.println(registerForm.getFileContentType());
 		if(RegexValidation.checkEmail(registerForm.getEmail()) && RegexValidation.checkPassword(registerForm.getPassword(), registerForm.getConformPassword())){
 			userService.addUser(registerForm.mappeToUser());
 			ActionContext.getContext().getSession().put("username",registerForm.getEmail());

@@ -8,7 +8,7 @@
 		<result property="email" column="email" />
 		<result property="password" column="password" />
 		<result property="telephone" column="telephone" />
-		<result property="adress" column="adress"/>
+		<result property="address" column="address"/>
 		<result property="date_created" column="date_created" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp" />
 	</resultMap>
      <sql id="cols">

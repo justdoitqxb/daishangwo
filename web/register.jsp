@@ -7,7 +7,7 @@
 <title>User register page</title>
 </head>
 <body>
-<form  action="register.action" method="get" > 
+<form  action="register.action" enctype="multipart/form-data" method="post" > 
 	<fieldset > 
 		<legend>表单的注册</legend> 
 		<table width=100% > 
@@ -31,6 +31,10 @@
 			<tr>
 				<td width=40% align="right"><label>address：</label></td> 
 				<td><input type="text" name="registerForm.address" ></td> 
+			</tr>
+			<tr>
+				<td width=40% align="right"><label>photo：</label></td> 
+				<td><input type="file" name="registerForm.file" ></td> 
 			</tr>
 			<tr>
 				<td width=40% align="right" rowspan=2><input type="submit" value="submit" /></td> 

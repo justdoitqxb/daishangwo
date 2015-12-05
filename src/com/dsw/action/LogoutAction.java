@@ -8,7 +8,7 @@ import com.opensymphony.xwork2.ActionSupport;
 @Scope("request")
 @Controller("logoutAction")
 public class LogoutAction extends ActionSupport{
-	private static final long serialVersionUID = 199L;
+	private static final long serialVersionUID = 1599L;
 	
 	@Override
 	public String execute(){
