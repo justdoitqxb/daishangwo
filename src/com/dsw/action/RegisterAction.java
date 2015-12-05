@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 
 import com.dsw.form.RegisterForm;
 import com.dsw.service.UserService;
+import com.dsw.util.ImageUtil;
 import com.dsw.util.RegexValidation;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -29,9 +30,7 @@ public class RegisterAction extends ActionSupport implements Serializable{
 	}
 	@Override
 	public String execute(){
-		System.out.println(registerForm.getFile().getPath());
-		System.out.println(registerForm.getFileFileName());
-		System.out.println(registerForm.getFileContentType());
+		ImageUtil.upload(registerForm.getFile(), registerForm.getFileFileName(), "qxb", "/photo");
 		if(RegexValidation.checkEmail(registerForm.getEmail()) && RegexValidation.checkPassword(registerForm.getPassword(), registerForm.getConformPassword())){
 			userService.addUser(registerForm.mappeToUser());
 			ActionContext.getContext().getSession().put("username",registerForm.getEmail());

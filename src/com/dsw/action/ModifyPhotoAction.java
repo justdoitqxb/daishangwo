@@ -11,7 +11,7 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 @Scope("request")
-@Controller("modifyPasswordAction")
+@Controller("modifyPhotoAction")
 public class ModifyPhotoAction extends ActionSupport{
 	private static final long serialVersionUID = 45899L;
 	
