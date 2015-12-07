@@ -16,27 +16,43 @@ public class ImageUtil {
 	
 	public static String upload(File file, String fileName, String identification, String saveDir){
 		if(file != null){
-			String realPath = ServletActionContext.getServletContext().getRealPath(saveDir);
+			String contextPath = ServletActionContext.getServletContext().getRealPath(saveDir);
+			String realPath = "C:\\Users\\bsn\\Desktop\\¥¯…œŒ“Server\\DaiShangWo\\web\\photo";
 			String suffix = fileName.substring(fileName.lastIndexOf("."));
 			if (fileName.lastIndexOf(".") == -1 || !suffix.equals(".jpg")) {  
                 throw new SecurityException("Iamge format error!") ;
             }  
             String newFileName = identification + System.currentTimeMillis() + suffix;   
-            File savefile = new File(new File(realPath), newFileName);  
-            if (!savefile.getParentFile().exists()){ 
-                savefile.getParentFile().mkdirs(); 
+            File saveFile = new File(new File(realPath), newFileName);  
+            if (!saveFile.getParentFile().exists()){ 
+                saveFile.getParentFile().mkdirs(); 
             }
-            FileOutputStream fos=null;
+            
+            File copyFile = new File(new File(contextPath), newFileName);  
+            if (!copyFile.getParentFile().exists()){ 
+                copyFile.getParentFile().mkdirs(); 
+            }
             FileInputStream fis = null;
+            FileOutputStream fos=null;
+            
+            FileInputStream copyFin = null;
+            FileOutputStream copyFos  = null;
             try {
-            	byte[] buffer=new byte[1024];
-                fos=new FileOutputStream(savefile);
+            	byte[] buffer1=new byte[1024];
+                fos=new FileOutputStream(saveFile);
                 fis = new FileInputStream(file);
-                while(fis.read(buffer)!=-1){
-                    fos.write(buffer);
-                    fos.flush();
+                while(fis.read(buffer1)!=-1){
+                    fos.write(buffer1);
+                    fos.flush();        
                 }
-                return savefile.getAbsolutePath();
+                byte[] buffer2=new byte[1024];
+                copyFin = new FileInputStream(file);
+                copyFos = new FileOutputStream(copyFile);
+                while(copyFin.read(buffer2)!=-1){
+                    copyFos.write(buffer2);
+                    copyFos.flush();        
+                }
+                return copyFile.getAbsolutePath();
             } catch (Exception e) {
                 e.printStackTrace();
             } finally{
@@ -44,8 +60,14 @@ public class ImageUtil {
                 	if(fis != null){
                 		fis.close();
                 	}
-                    if(fos!=null){
+                    if(fos != null){
                         fos.close();
+                    }
+                    if(copyFin != null){
+                    	copyFin.close();
+                    }
+                    if(copyFos != null){
+                    	copyFos.close();
                     }
                 } catch (IOException e) {
                     e.printStackTrace();

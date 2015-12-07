@@ -30,12 +30,13 @@ public class RegisterAction extends ActionSupport implements Serializable{
 	}
 	@Override
 	public String execute(){
-		String photo = ImageUtil.upload(registerForm.getFile(), registerForm.getFileFileName(), "qxb", "/photo");
+		String photoPath = ImageUtil.upload(registerForm.getFile(), registerForm.getFileFileName(), "qxb", "/photo");
+		System.out.println(photoPath);
 		if(RegexValidation.checkEmail(registerForm.getEmail()) && RegexValidation.checkPassword(registerForm.getPassword(), registerForm.getConformPassword())){
 			userService.addUser(registerForm.mappeToUser());
 			ActionContext.getContext().getSession().put("username",registerForm.getEmail());
 		}else{
-			ActionContext.getContext().getSession().put("photo",photo);
+			ActionContext.getContext().getSession().put("photo",photoPath);
 			ActionContext.getContext().getSession().put("errorMessage","邮箱格式错误或密码不一致！");
 			return ERROR;
 		}
