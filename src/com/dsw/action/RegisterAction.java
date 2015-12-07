@@ -1,6 +1,8 @@
 package com.dsw.action;
 
 import java.io.Serializable;
+
+import org.apache.struts2.ServletActionContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
@@ -30,13 +32,14 @@ public class RegisterAction extends ActionSupport implements Serializable{
 	}
 	@Override
 	public String execute(){
-		String photoPath = ImageUtil.upload(registerForm.getFile(), registerForm.getFileFileName(), "qxb", "/photo");
-		System.out.println(photoPath);
 		if(RegexValidation.checkEmail(registerForm.getEmail()) && RegexValidation.checkPassword(registerForm.getPassword(), registerForm.getConformPassword())){
+			String photoPath = ImageUtil.upload(registerForm.getFile(), registerForm.getFileFileName(), registerForm.getEmail().replace('.', '_'), "/photo");
+			registerForm.setNewFile(photoPath);
 			userService.addUser(registerForm.mappeToUser());
 			ActionContext.getContext().getSession().put("username",registerForm.getEmail());
+			String contextPath = ServletActionContext.getServletContext().getRealPath("/photo");
+			ActionContext.getContext().getSession().put("photo",contextPath+"\\"+photoPath);
 		}else{
-			ActionContext.getContext().getSession().put("photo",photoPath);
 			ActionContext.getContext().getSession().put("errorMessage","邮箱格式错误或密码不一致！");
 			return ERROR;
 		}

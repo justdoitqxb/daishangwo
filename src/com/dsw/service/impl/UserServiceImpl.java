@@ -48,9 +48,19 @@ public class UserServiceImpl implements UserService {
     	User user = getUserByEmail(email);
     	if(user.getPassword().equals(oldPassword)){
     		user.setPassword(newPassword);
-    		userDao.update(user);
+    		userDao.updatePassword(user);
     	}else{
     		//throw new RuntimeException("‘≠√‹¬Î¥ÌŒÛ");
+    		return false;
+    	}
+    	return true;
+    }
+    public boolean modifyPhoto(String email,String Password, String newPhoto){
+    	User user = getUserByEmail(email);
+    	if(user.getPassword().equals(Password)){
+    		user.setPhoto(newPhoto);
+    		userDao.updatePhoto(user);
+    	}else{
     		return false;
     	}
     	return true;

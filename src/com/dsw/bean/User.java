@@ -10,6 +10,15 @@ public class User implements Serializable{
     private String telephone;
     private String address;
 	private Timestamp date_created;
+	private String photo;
+
+	public String getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	}
 
 	public int getId() {
 		return id;

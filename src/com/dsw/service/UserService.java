@@ -23,4 +23,9 @@ public interface UserService {
      * @param User
      */
 	public boolean modifyPassword(String email,String oldPassword, String newPassword);
+	/**
+     * ÐÞ¸ÄÍ·Ïñ
+     * @param User
+     */
+	public boolean modifyPhoto(String email,String Password, String newPhoto);
 }

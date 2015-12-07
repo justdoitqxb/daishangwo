@@ -52,7 +52,8 @@ public class ImageUtil {
                     copyFos.write(buffer2);
                     copyFos.flush();        
                 }
-                return copyFile.getAbsolutePath();
+                return newFileName;
+                //return copyFile.getAbsolutePath();
             } catch (Exception e) {
                 e.printStackTrace();
             } finally{

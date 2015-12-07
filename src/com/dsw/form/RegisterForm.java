@@ -13,8 +13,15 @@ public class RegisterForm {
     private File file;
 	private String fileFileName;  
     private String fileContentType;
+    private String newFile;
     
-    public File getFile() {
+    public String getNewFile() {
+		return newFile;
+	}
+	public void setNewFile(String newFile) {
+		this.newFile = newFile;
+	}
+	public File getFile() {
 		return file;
 	}
 	public void setFile(File file) {
@@ -68,6 +75,7 @@ public class RegisterForm {
 		user.setPassword(password);
 		user.setTelephone(telephone);
 		user.setAddress(address);
+		user.setPhoto(newFile);
 		return user;
 	}
 }
