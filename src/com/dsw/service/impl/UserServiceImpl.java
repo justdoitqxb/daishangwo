@@ -57,12 +57,13 @@ public class UserServiceImpl implements UserService {
     }
     public boolean modifyPhoto(String email,String Password, String newPhoto){
     	User user = getUserByEmail(email);
-    	if(user.getPassword().equals(Password)){
-    		user.setPhoto(newPhoto);
-    		userDao.updatePhoto(user);
-    	}else{
-    		return false;
+    	if(user != null){
+    		if(user.getPassword().equals(Password)){
+    			user.setPhoto(newPhoto);
+    			userDao.updatePhoto(user);
+    			return true;
+    		}
     	}
-    	return true;
+    	return false;
     }
 }

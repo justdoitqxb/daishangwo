@@ -35,7 +35,7 @@
          update dsw_user set password=#{password} where email=#{email}   
      </update>
      
-<!-- 更改密码 -->
+<!-- 更改头像 -->
      <update id="updatePhoto" parameterType="com.dsw.bean.User" >
          update dsw_user set photo=#{photo} where email=#{email}   
      </update>

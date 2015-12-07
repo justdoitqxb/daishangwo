@@ -2,13 +2,22 @@ package com.dsw.form;
 
 import java.io.File;
 
+import com.dsw.bean.User;
+
 public class ModifyPhotoForm {
 	private String username;
 	private String password;
 	private File file;
 	private String fileFileName;
 	private String fileContentType;
+	private String newFile;
 	
+	public String getNewFile() {
+		return newFile;
+	}
+	public void setNewFile(String newFile) {
+		this.newFile = newFile;
+	}
 	public String getUsername() {
 		return username;
 	}
@@ -38,5 +47,13 @@ public class ModifyPhotoForm {
 	}
 	public void setFileContentType(String fileContentType) {
 		this.fileContentType = fileContentType;
+	}
+	
+	public User mappeToUser(){
+		User user = new User();
+		user.setEmail(username);
+		user.setPassword(password);
+		user.setPhoto(newFile);
+		return user;
 	}
 }

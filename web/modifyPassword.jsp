@@ -7,12 +7,12 @@
 <title>User register page</title>
 </head>
 <body>
-<form  action="modify.action" method="post" > 
+<form  action="modifyPassword.action" method="post" > 
 	<fieldset > 
 		<legend>修改密码</legend> 
 		<table width=100% > 
 		<tbody> 
-			<tr >
+			<tr>
 				<td width=40% align="right"><label for="t1">旧密码:</label></td> 
 				<td><input type="password" name="modifyPasswordForm.oldPassword"></td> 
 			</tr> 
