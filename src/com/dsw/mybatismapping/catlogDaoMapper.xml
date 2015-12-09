@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <!--命名空间用于查找 -->
+ <mapper namespace="com.dsw.dao.CatlogDao">
+
+<!-- 查询所有记录 -->
+     <select id="selectAll" resultType="com.dsw.bean.Catlog">
+         select * from  dsw_catlog      
+     </select>
+ 
+<!-- 查询子类-->
+     <select id="findChildByParentId" parameterType="int" resultType="com.dsw.bean.Catlog">
+         select * from dsw_catlog where parent_id= #{parentId}    
+     </select>
+     
+<!-- 插入一个类 -->
+     <insert id="insert" parameterType="com.dsw.bean.Catlog" >
+         insert into dsw_catlog(category, parent_id) values (#{category}, #{parent_id})    
+     </insert>
+     
+<!-- 更改 -->
+     <update id="update" parameterType="com.dsw.bean.Catlog" >
+         update dsw_catlog set category=#{category}, parent_id=#{parent_id} where id=#{id}   
+     </update>
+     
+<!-- 删除一个 -->
+     <delete id="delete" parameterType="com.dsw.bean.Catlog" >
+         delete from dsw_catlog where id= #{id}   
+     </delete>
+
+ </mapper>

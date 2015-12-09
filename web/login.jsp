@@ -12,7 +12,7 @@
 		<legend>用户登录</legend> 
 		<table width=100% > 
 		<tbody> 
-			<tr >
+			<tr>
 				<td width=40% align="right"><label for="t1">Email:</label></td> 
 				<td><input type="text" name="loginForm.email"></td> 
 			</tr> 
