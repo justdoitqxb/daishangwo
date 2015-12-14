@@ -5,7 +5,7 @@
 
 <!-- 查询所有记录 -->
      <select id="selectAll" resultType="com.dsw.bean.Catlog">
-         select * from  dsw_catlog      
+         select * from  dsw_catlog order by parent_id 
      </select>
  
 <!-- 查询子类-->

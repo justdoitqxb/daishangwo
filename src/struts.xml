@@ -58,6 +58,16 @@
             <result name = "error">error</result>
        </action>
        
+       <action name="catlogList" class="catlogListAction">
+            <result name = "success">success</result>
+            <result name = "error">error</result>
+       </action>
+       
+       <action name="addCatlog" class="addCatlogAction">
+            <result name = "success">success</result>
+            <result name = "error">error</result>
+       </action>
+       
     </package>
     <!-- Add new packages here -->
 

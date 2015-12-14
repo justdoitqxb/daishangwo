@@ -13,7 +13,7 @@ import com.opensymphony.xwork2.ActionSupport;
 @Scope("request")
 @Controller("loginAction")
 public class LoginAction extends ActionSupport{
-	private static final long serialVersionUID = 1099L;
+	private static final long serialVersionUID = 3226322524537948363L;
 	@Autowired
 	@Qualifier("userServiceImpl")
 	private UserService userService;
