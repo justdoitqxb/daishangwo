@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <!--命名空间用于查找 -->
+ <mapper namespace="com.dsw.dao.AdministratorDao">
+
+<!-- 查询所有记录 -->
+     <select id="selectAll" resultType="com.dsw.bean.Administrator">
+         select * from  dsw_administrator 
+     </select>
+ 
+<!-- 查询子类-->
+     <select id="check" parameterType="int" resultType="com.dsw.bean.Administrator">
+         select * from dsw_administrator where username=#{username} and password=#{password}    
+     </select>
+     
+<!-- 插入一个类 -->
+     <insert id="insert" parameterType="com.dsw.bean.Administrator" >
+         insert into dsw_administrator(username, password, date_created) values (#{username}, #{password}, now())    
+     </insert>
+     
+<!-- 更改 -->
+     <update id="update" parameterType="com.dsw.bean.Administrator" >
+         update dsw_administrator set password=#{password} where username=#{username}   
+     </update>
+     
+<!-- 删除一个 -->
+     <delete id="delete" parameterType="com.dsw.bean.Administrator" >
+         delete from dsw_administrator where id= #{id}   
+     </delete>
+
+ </mapper>

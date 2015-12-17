@@ -22,31 +22,19 @@ CatlogService cats = (CatlogService)ctx.getBean("catlogServiceImpl");
 	<p><a href="javascript: d.openAll();">open all</a> | <a href="javascript: d.closeAll();">close all</a></p>
 	<script type="text/javascript">
 		d = new dTree('d');
-		d.add(0,-1,'My example tree');
-		d.add(1,0,'Node 1','example01.html');
-		d.add(2,0,'Node 2','example01.html');
-		d.add(3,1,'Node 1.1','example01.html');
-		d.add(4,0,'Node 3','example01.html');
-		d.add(5,3,'Node 1.1.1','example01.html');
-		d.add(6,5,'Node 1.1.1.1','example01.html');
-		d.add(7,0,'Node 4','example01.html');
-		d.add(8,1,'Node 1.2','example01.html');
-		d.add(9,0,'My Pictures','example01.html','Pictures I\'ve taken over the years','','','img/imgfolder.gif');
-		d.add(10,9,'The trip to Iceland','example01.html','Pictures of Gullfoss and Geysir');
-		d.add(11,9,'Mom\'s birthday','example01.html');
-		d.add(12,0,'Recycle Bin','example01.html','','','img/trash.gif');
+		d.add(0,-1,'分类列表');
 		<%
-		int count = 13;
 		for(Catlog c:cats.getCatlogList()){
 		%>
-		d.add(<%=count%>,1,'<%=c.getCategory()%>','example01.html');
+		d.add(<%=c.getId()%>,<%=c.getParent_id()%>,'<%=c.getCategory()%>','example01.html');
 		<%
-			count++;
 		}
 		%>
+		d.add(120,0,'Recycle Bin','example01.html','','','img/trash.gif');
 		document.write(d);
 	</script>
 
 </div>
+
 </body>
 </html>

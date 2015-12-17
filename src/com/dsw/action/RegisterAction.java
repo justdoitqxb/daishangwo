@@ -33,6 +33,7 @@ public class RegisterAction extends ActionSupport implements Serializable{
 	@Override
 	public String execute(){
 		if(RegexValidation.checkEmail(registerForm.getEmail()) && RegexValidation.checkPassword(registerForm.getPassword(), registerForm.getConformPassword())){
+			
 			String photoPath = ImageUtil.upload(registerForm.getFile(), registerForm.getFileFileName(), registerForm.getEmail().replace('.', '_'), "/photo");
 			registerForm.setNewFile(photoPath);
 			userService.addUser(registerForm.mappeToUser());
