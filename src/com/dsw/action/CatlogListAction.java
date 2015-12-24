@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 
 import com.dsw.bean.Catlog;
 import com.dsw.service.CatlogService;
-import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 @Scope("request")

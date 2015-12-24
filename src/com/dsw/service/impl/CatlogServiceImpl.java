@@ -30,7 +30,7 @@ public class CatlogServiceImpl implements CatlogService {
 
 	@Override
 	public void add(Catlog catlog) {	
-		
+		catlogDao.insert(catlog);
 	}
 
 	@Override
