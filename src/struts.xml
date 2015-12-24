@@ -64,7 +64,7 @@
        </action>
        
        <action name="addCatlog" class="addCatlogAction">
-            <result name = "success">addCatlog.action</result>
+            <result name = "success">addCategory.jsp</result>
             <result name = "error">error</result>
        </action>
        

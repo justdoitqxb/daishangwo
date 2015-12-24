@@ -29,6 +29,6 @@ public class AddCatlogAction extends ActionSupport{
 	@Override
 	public String execute(){
 		catlogService.add(addCatlogForm.mappeToCatlog());
-		return ERROR;
+		return SUCCESS;
 	}
 }

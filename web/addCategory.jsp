@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@page import="com.dsw.bean.*,java.util.*" %>
-<%@ page import="com.dsw.service.impl.CatlogServiceImpl,com.dsw.service.CatlogService,com.dsw.bean.Catlog"%>
-<%@page import="java.util.List" %>    
+<%@ page import="com.dsw.service.impl.CatlogServiceImpl,com.dsw.service.CatlogService,com.dsw.bean.Catlog"%>   
 <%@page import="org.springframework.web.context.WebApplicationContext" %>
 <%@page import="org.springframework.web.context.support.WebApplicationContextUtils" %> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -132,20 +131,25 @@ for (i=0; i<select1_len; i++){
 int count = 1;
 int curID = 0;
 int childCount = 1;
+Map<Integer,Integer> root = new HashMap<Integer,Integer>();
 for(Catlog cat:catlogs){ 
 	if(cat.getParent_id() != 0){
-		if(curID == 0){
-			curID = cat.getParent_id();
-		}
-		if(curID != cat.getParent_id()){
-			curID = cat.getParent_id();
-			count++;
-			childCount = 1;
-		}
+		if(root.containsKey(cat.getParent_id())){
+			if(curID == 0){
+				curID = cat.getParent_id();
+			}
+			if(curID != cat.getParent_id()){
+				curID = cat.getParent_id();
+				childCount = 1;
+			}
 %>
-		select2[<%=count%>][<%=childCount%>] = new Option("<%=cat.getCategory()%>", "<%=cat.getId()%>");
+			select2[<%=root.get(cat.getParent_id())%>][<%=childCount%>] = new Option("<%=cat.getCategory()%>", "<%=cat.getId()%>");
 <%
-	childCount++;
+			childCount++;
+		}
+	}else{
+		root.put(cat.getId(), count);
+		count++;
 	}
 }%>
 
