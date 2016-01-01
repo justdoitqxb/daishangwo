@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <!--命名空间用于查找 -->
+ <mapper namespace="com.dsw.dao.CourseDao">
+
+<!-- 查询所有记录 -->
+     <select id="selectAll" resultType="com.dsw.bean.Course">
+         select * from  dsw_course      
+     </select>
+ 
+<!-- 查询一个用户 --> <!--  别名替代，简写-->
+     <select id="findbyCourseName" parameterType="string" resultType="com.dsw.bean.Course">
+         select * from dsw_course where course_name= #{courseName}    
+     </select>
+     
+<!-- 插入一个用户 -->
+     <insert id="insert" parameterType="com.dsw.bean.Course" >
+         insert into dsw_course(email, password, telephone, address, date_created, photo) values (#{email},#{password},#{telephone},#{address},now(),#{photo})    
+     </insert>
+     
+<!-- 更改头像 -->
+     <update id="updatePhoto" parameterType="com.dsw.bean.Course" >
+         update dsw_course set pic_path=#{picPath} where id=#{id}   
+     </update>
+     
+<!-- 删除一个用户 -->
+     <delete id="delete" parameterType="com.dsw.bean.Course" >
+         delete from dsw_course where id= #{id}   
+     </delete>
+     
+<!-- 统计用户数 -->
+     <select id="countAll" resultType="int" >
+         select count(*) from dsw_course   
+     </select>
+ </mapper>

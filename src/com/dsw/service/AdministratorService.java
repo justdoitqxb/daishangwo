@@ -1,7 +1,6 @@
 package com.dsw.service;
 
 import com.dsw.bean.Administrator;
-import com.dsw.bean.User;
 
 public interface AdministratorService {
 	/**
