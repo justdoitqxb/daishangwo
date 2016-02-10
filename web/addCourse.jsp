@@ -7,12 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form  action="register.action" enctype="multipart/form-data" method="post" > 
+<form  action="addCourse.action" enctype="multipart/form-data" method="post" > 
 	<fieldset > 
 		<legend>发布课程表单</legend> 
 		<table width=100% > 
 		<tbody> 
-			<tr >
+			<tr>
 				<td width=40% align="right"><label for="t1">Email:</label></td> 
 				<td><input type="text" name="registerForm.email"></td> 
 			</tr> 
@@ -44,6 +44,5 @@
 	</table> 
 	</fieldset> 
 </form> 
-
 </body>
 </html>

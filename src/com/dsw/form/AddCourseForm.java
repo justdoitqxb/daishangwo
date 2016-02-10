@@ -2,7 +2,7 @@ package com.dsw.form;
 
 import java.io.File;
 
-public class AddCourse {
+public class AddCourseForm {
 	private String course_name;
 	private int category_id;
 	private int author_id;

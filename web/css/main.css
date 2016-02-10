@@ -1,0 +1,8 @@
+
+table,td,th {font-size:12px;font-family:"����";	border:1px solid #cccccc;border-collapse:collapse;}
+    td,th{	height:15px;}
+table caption{font-size:14px;font-family:serif;	color:#444444;	font-weight:bold;}
+    th{background:#336699;	color:white;height:20px}
+    td{height:20px}
+#headtb{font-size:14px;	color:white;}
+#headtb a{color:white;	font-weight:bold; text-decoration:none;}
