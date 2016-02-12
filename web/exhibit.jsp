@@ -5,6 +5,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script type="text/javascript" src="js/jsFrame.js"></script>
+<script type="text/javascript" src="js/Mainpage.js"></script>
 </head>
 <body>
     <div id="pxs_container" class="pxs_container">
@@ -37,5 +40,21 @@
             </ul>
         </div>
     </div>
+    
+<div style="width:1024px;">
+<script>
+var oLoad = getByClass(document.body, 'pxs_loading')[0];
+var oImgBox = getByClass(document.body,'pxs_slider_wrapper')[0];
+var imgs = document.getElementsByTagName('img');
+for(var i=0;i<imgs.length;i++)
+{
+	imgs[i].onload = function()
+	{
+		oLoad.style.display = 'none';
+	}
+	oImgBox.style.display = 'block';
+}
+</script>
+</div>
 </body>
 </html>

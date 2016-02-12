@@ -204,11 +204,3 @@ function startMovez(obj, json, fnEnd)
                }
                return true;
            }
-
-
-
-
-
-
-
-
