@@ -4,9 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>User register page</title>
+<title>修改密码e</title>
 </head>
+<center>
 <body>
+<jsp:include page="siteheader.jsp" flush="true"/>
+
+<div style=" width:1022px; height:500px; border:1px solid black;">
 <form  action="modifyPassword.action" method="post" > 
 	<fieldset > 
 		<legend>修改密码</legend> 
@@ -32,6 +36,9 @@
 		</table> 
 	</fieldset> 
 </form> 
+</div>
 
+<jsp:include page="footer.jsp" flush="true"/>
 </body>
+</center>
 </html>

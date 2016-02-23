@@ -18,17 +18,23 @@
 }
 </style>
 </head>
+<center>
 <body>
+
 <%    
 WebApplicationContext ctx = WebApplicationContextUtils.getWebApplicationContext(getServletContext());      
 CatlogService cats = (CatlogService)ctx.getBean("catlogServiceImpl");
 List<Catlog> catlogs = cats.getCatlogList();
 %>
 <div>
+<jsp:include page="siteheader.jsp" flush="true"/>
+  
+<div style=" width:1022px; height:400px; border:1px solid black;">
+  <div>
 	<input type="radio" name="choice" onclick="javascript:ChangeStatus(1);"/>一级目录
 	<input type="radio" name="choice" onclick="javascript:ChangeStatus(2);"/>二级目录
 	<input type="radio" name="choice" checked onclick="javascript:ChangeStatus(3);"/>三级目录
-</div>
+  </div>
 
 <form id="form1" class="close" action="addCatlog.action" method="post" onsubmit="return firstCheck();" > 
 	<fieldset > 
@@ -111,13 +117,17 @@ List<Catlog> catlogs = cats.getCatlogList();
 				<td><input id="third" type="text" name="addCatlogForm.thirdLevel"></td> 
 			</tr> 
 			<tr>
-				<td width=40% align="right" rowspan=2><input type="submit" value="submit" /></td> 
-				<td><input id="Reset1" type="reset" value="reset" /></td> 
+				<td width=40% align="right" rowspan=2></td> 
+				<td><input type="submit" value="提交" /><input id="Reset1" type="reset" value="重置" /></td> 
 			</tr> 
 		</tbody> 
 		</table> 
 	</fieldset> 
 </form>
+</div>
+    
+<jsp:include page="footer.jsp" flush="true"/>
+</div>
 <script type="text/javascript">
 var select1_len = document.getElementById("s1").options.length;
 var select2 = new Array(select1_len);
@@ -217,4 +227,5 @@ function thirdCheck(){
 }
 </script>
 </body>
+</center>
 </html>

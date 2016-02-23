@@ -18,8 +18,7 @@ WebApplicationContext ctx = WebApplicationContextUtils.getWebApplicationContext(
 CatlogService cats = (CatlogService)ctx.getBean("catlogServiceImpl");
 %>
 <div class="dtree">
-
-	<p><a href="javascript: d.openAll();">open all</a> | <a href="javascript: d.closeAll();">close all</a></p>
+	<p><a href="javascript: d.openAll();">展开</a> | <a href="javascript: d.closeAll();">关闭</a></p>
 	<script type="text/javascript">
 		d = new dTree('d');
 		d.add(0,-1,'分类列表');
@@ -30,7 +29,7 @@ CatlogService cats = (CatlogService)ctx.getBean("catlogServiceImpl");
 		<%
 		}
 		%>
-		d.add(120,0,'Recycle Bin','example01.html','','','img/trash.gif');
+		d.add(120,0,'Recycle Bin','example01.html','','','images/trash.gif');
 		document.write(d);
 	</script>
 

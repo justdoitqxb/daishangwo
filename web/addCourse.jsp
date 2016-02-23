@@ -4,9 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>发布课程</title>
 </head>
+<center>
 <body>
+<jsp:include page="siteheader.jsp" flush="true"/>
+
+<div style=" width:1022px; height:500px; border:1px solid black;">
 <form  action="addCourse.action" enctype="multipart/form-data" method="post" > 
 	<fieldset > 
 		<legend>发布课程表单</legend> 
@@ -44,5 +48,9 @@
 	</table> 
 	</fieldset> 
 </form> 
+</div>
+
+<jsp:include page="footer.jsp" flush="true"/>
 </body>
+</center>
 </html>

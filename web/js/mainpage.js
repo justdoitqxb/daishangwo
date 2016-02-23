@@ -112,7 +112,7 @@ window.onload=function(){
 //			startMovez(aImg_sm[iNow], {opacity:100,marginTop:-20});
 //		}
 //	}
-	
+	//setStyle3($('cart'), 'display', 'none');
 	var oDivu3=document.getElementById('divu3');
 	var oDivu2=document.getElementById('divu2');
 	oDivu3.onmouseover=function()

@@ -4,11 +4,11 @@
 #menu a {color: white;}
 #div1 { width:100px; height:150px; position:absolute; right:0px; z-index: 10;}
 #div2 { width:100px; height:150px; position:absolute; left:0px; z-index: 10;}
-.level { width:98px; height:44px; font-size:18px; font-weight:bold; border:1px solid #0099FF; float:left; position:relative; margin-top:2px; margin-left:80px;}
-.level1 { width:2px; height:44px; background:#33FF00;opacity:0.75; filter:alpha(opacity:75); position:absolute; z-index:0; right:0px;}
-.level2 {width:98px; height:48px; margin-top:10px; text-align:center; position:absolute; z-index:1;}
+.level { width:98px; height:44px; font-size:18px; font-weight:bold; border:1px solid #0099FF; float:left; position:relative; z-index:4; margin-top:2px; margin-left:80px;}
+.level1 { width:2px; height:44px; background:#33FF00;opacity:0.75; filter:alpha(opacity:75); position:absolute; z-index:4; right:0px;}
+.level2 {width:98px; height:48px; margin-top:10px; text-align:center; position:absolute; z-index:5;}
 .level3 { width:98px; height:0px; border: 0px dashed #0099FF; overflow:hidden; background:#3CB371; position:absolute; top:48px;}
-#divu { width:150px; height:150px; position:relative; float:left; z-index: 10;}
+#divu { width:150px; height:150px; position:relative; float:left;}
 #divu1 { width:150px; height:150px; position:absolute; z-index:0;}
-#divu2 { width:150px; height:150px; background:#66CCFF; position:absolute; bottom:0px; z-index:1;}
+#divu2 { width:150px; height:150px; background:#3CB371; position:absolute; bottom:0px; z-index:1;}
 #divu3 { width:150px; height:150px; position:absolute; z-index:2;}
