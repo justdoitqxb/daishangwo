@@ -11,6 +11,7 @@
 <script type="text/javascript" src="js/item.js"></script>
 </head>
 <body>
+<div style="float:left;">
 <div id="item1" class="xsnazzy">
 	<b class="xb1"></b><b class="xb2"></b><b class="xb3"></b><b class="xb4"></b><b class="xb5"></b><b class="xb6"></b><b class="xb7"></b>
 	<div id="item2" class="outcontainer">
@@ -41,5 +42,9 @@
 	</div>
 	<b class="xb7"></b><b class="xb6"></b><b class="xb5"></b><b class="xb4"></b><b class="xb3"></b><b class="xb2"></b><b class="xb1"></b>
 </div>
+</div>
+<script>
+startItem();
+</script>
 </body>
 </html>

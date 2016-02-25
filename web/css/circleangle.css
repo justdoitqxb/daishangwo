@@ -1,10 +1,9 @@
 body {
 	font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
-	font-size: 11px;
 }
 .xsnazzy {background: transparent; width:128px;}
 .outcontainer{width:120px; height:300px; border:1px solid #3CB371; border-width:0 1px; background:#3CB371; overflow:hidden;}
-.xboxcontent{display:block; background:#3CB371; border:3px solid #fff; border-width:0 3px; font-size:2.5em; color:#fc0; text-align:center; width:120px; height:60px;}
+.xboxcontent{display:block; background:#3CB371; border:3px solid #fff; border-width:0 3px; font-size:2.0em; color:#fc0; text-align:center; width:120px; height:60px;}
 .detailcontent{background:#fff; width:471px; height:300px;}
 /* hack for IE5.5 */
 .xb1, .xb2, .xb3, .xb4, .xb5, .xb6, .xb7 {display:block; overflow:hidden; font-size:0;}

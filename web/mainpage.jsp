@@ -6,7 +6,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>学道首页</title>
 <link rel="stylesheet" type="text/css" href="css/muster.css" />
-<link rel="stylesheet" type="text/css" href="css/style.css" />
 <script type="text/javascript" src="js/jsFrame.js"></script>
 <script type="text/javascript" src="js/mainpage.js"></script>
 </head>
@@ -56,15 +55,16 @@
         </div>
     </div>
 
-    <div style="width:1024px; height:360px; overflow:hidden;">
+    <div style="width:1024px; height:400px; overflow:hidden;">
 
-    	<div style="width:1022px; height:350px; float:left; border:1px solid black;">
+    	<div style="width:1022px; height:390px; float:left; border:1px solid black;">
         	<h3>猜你喜欢</h3>
-        	<li>qqqqqqqqqqqqqqqqqqqqqqqqqq</li>
-        	<li>wwwwwwwwwwwwwwwwwwwwwwwwww</li>
-        	<li>tttttttttttttttttttttttttt</li>
+        	
+        	<jsp:include page="item.jsp" flush="true"/>
+        	        	
         </div>
     </div>
+    
     <div style="width:1024px; height:360px; overflow:hidden;">
 
     	<div style="width:1022px; height:350px; float:left; border:1px solid black;">

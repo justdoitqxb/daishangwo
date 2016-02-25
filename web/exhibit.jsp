@@ -7,9 +7,10 @@
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 <script type="text/javascript" src="js/jsFrame.js"></script>
-<script type="text/javascript" src="js/Mainpage.js"></script>
+<script type="text/javascript" src="js/exhibit.js"></script>
 </head>
 <body>
+  <div style="width:920px; height:402px; overflow:hidden">
     <div id="pxs_container" class="pxs_container">
         <div class="pxs_bg">
             <div class="pxs_bg1"></div>
@@ -40,8 +41,8 @@
             </ul>
         </div>
     </div>
-    
-<div style="width:1024px;">
+  </div> 
+
 <script>
 var oLoad = getByClass(document.body, 'pxs_loading')[0];
 var oImgBox = getByClass(document.body,'pxs_slider_wrapper')[0];
@@ -55,6 +56,5 @@ for(var i=0;i<imgs.length;i++)
 	oImgBox.style.display = 'block';
 }
 </script>
-</div>
 </body>
 </html>

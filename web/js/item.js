@@ -1,5 +1,5 @@
-// JavaScript Document
-window.onload=function(){
+// JavaScript Docum
+function startItem(){
 	var item1=$('item1');
 	var item2=$('item2');
 	var yishu=$('yishu');

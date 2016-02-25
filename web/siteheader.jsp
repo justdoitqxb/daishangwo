@@ -6,7 +6,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>学道首页</title>
 <link rel="stylesheet" type="text/css" href="css/muster.css" />
-<link rel="stylesheet" type="text/css" href="css/style.css" />
 <script type="text/javascript" src="js/jsFrame.js"></script>
 <script type="text/javascript" src="js/siteheader.js"></script>
 </head>
@@ -59,9 +58,7 @@
                 </div>
    		 </div>
     </div>
-
-  </div>
-  
+  </div> 
 </body>
 </center>
 </html>
